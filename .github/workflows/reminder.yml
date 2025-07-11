@@ -10,7 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Send Discord webhook reminder
+        env:
+          WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
         run: |
           curl -X POST -H "Content-Type: application/json" \
-            -d "{\"content\":\"🔔 Reminder / Напоминание: Donate transfer tokens and complete sect construction. / Пожертвуйте токены передачи и завершите строительство секты.\"}" \
-            "$WEBHOOK_URL"
+          -d "{\"content\":\"🔔 **Reminder / Напоминание**\n\nDonate transfer tokens and complete sect construction.\nПожертвуйте токены передачи и завершите строительство секты.\"}" \
+          "$WEBHOOK_URL"
