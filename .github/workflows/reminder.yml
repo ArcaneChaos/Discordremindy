@@ -1,0 +1,16 @@
+name: Discord Reminder
+
+on:
+  schedule:
+    - cron: '0 */12 * * *'  # every 12 hours UTC
+  workflow_dispatch:
+
+jobs:
+  send-reminder:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Discord webhook reminder
+        run: |
+          curl -X POST -H "Content-Type: application/json" \
+            -d "{\"content\":\"🔔 Reminder / Напоминание: Donate transfer tokens and complete sect construction. / Пожертвуйте токены передачи и завершите строительство секты.\"}" \
+            "$WEBHOOK_URL"
