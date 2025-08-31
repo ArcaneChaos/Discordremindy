@@ -14,5 +14,5 @@ jobs:
           WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
         run: |
           curl -X POST -H "Content-Type: application/json" \
-          -d "{\"content\":\"@everyone 🔔 **Reminder / Напоминание**\n\nPlease remember to **complete sect construction** and **donate Otherworld transfer tokens**.\nПожалуйста, не забудьте **завершить строительство секты** и **пожертвовать токены переноса из Иного мира**.\n\n📘 Instructions for both are posted in <#1373189131512840243> (FAQ channel).\n📘 Инструкции по обоим действиям находятся в <#1373189131512840243> (канал FAQ).\"}" \
+          -d "{\"content\":\"🔔 **Reminder / Напоминание**\n\nPlease remember to **complete sect construction** and **donate Otherworld transfer tokens**.\nПожалуйста, не забудьте **завершить строительство секты** и **пожертвовать токены переноса из Иного мира**.\n\n📘 Instructions for both are posted in <#1373189131512840243> (FAQ channel).\n📘 Инструкции по обоим действиям находятся в <#1373189131512840243> (канал FAQ).\"}" \
           "$WEBHOOK_URL"
